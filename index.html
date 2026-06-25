@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BMI Checker Hub</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>BMI Checker Hub</h1>
+      <p class="tagline">Quickly check your Body Mass Index (BMI) and see how your weight compares to common healthy ranges.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Intro Section -->
+    <section id="intro" class="card">
+      <h2>Welcome!</h2>
+      <p>
+        BMI (Body Mass Index) helps you understand if your weight is in a healthy range based on your height. 
+        It's a simple number that gives a general idea — useful for starting conversations about health.
+      </p>
+      <p class="muted">Note: BMI is a general guideline and doesn't replace personalized advice from a healthcare professional.</p>
+    </section>
+
+    <!-- Input Section -->
+    <section id="input" class="card">
+      <h2>Enter your details</h2>
+      <form id="bmi-form" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="height-value">Height</label>
+            <div class="inline-input">
+              <input id="height-value" name="height" type="number" min="0" step="any" placeholder="e.g., 170" aria-describedby="height-help" required>
+              <select id="height-unit" name="height-unit" aria-label="Height unit">
+                <option value="cm">cm</option>
+                <option value="in">inches</option>
+              </select>
+            </div>
+            <small id="height-help" class="muted">Enter your height in centimeters or inches.</small>
+          </div>
+
+          <div class="field">
+            <label for="weight-value">Weight</label>
+            <div class="inline-input">
+              <input id="weight-value" name="weight" type="number" min="0" step="any" placeholder="e.g., 70" aria-describedby="weight-help" required>
+              <select id="weight-unit" name="weight-unit" aria-label="Weight unit">
+                <option value="kg">kg</option>
+                <option value="lb">pounds</option>
+              </select>
+            </div>
+            <small id="weight-help" class="muted">Enter your weight in kilograms or pounds.</small>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="calc-btn" type="button">Calculate BMI</button>
+          <button id="reset-btn" type="button" class="secondary">Reset</button>
+        </div>
+
+        <p id="error" class="error" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- Output Section -->
+    <section id="output" class="card">
+      <h2>Result</h2>
+      <div id="result" class="result" aria-live="polite">
+        <p class="muted">Your BMI will appear here after calculation.</p>
+      </div>
+      <div id="tips" class="tips" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© BMI Checker Hub — informational only. For personalized health advice consult a healthcare professional.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+:root{
+  --bg: #f6f8f9;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent-blue: #2563eb;
+  --accent-green: #10b981;
+  --accent-gray: #94a3b8;
+  --danger: #ef4444;
+  --max-width: 900px;
+  --shadow: 0 6px 18px rgba(31,41,55,0.06);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+* { box-sizing: border-box; }
+html,body { height: 100%; margin: 0; background: var(--bg); color: var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+.container { max-width: var(--max-width); margin: 0 auto; padding: 1.25rem; }
+
+.site-header { padding: 1.25rem 0 0.5rem; }
+.site-header h1 { margin: 0; font-size: 1.5rem; color: var(--accent-blue); }
+.tagline { margin: 0.25rem 0 0; color: var(--muted); }
+
+.card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: var(--shadow);
+}
+
+h2 { margin-top: 0; color: var(--text); font-size: 1.1rem; }
+
+.row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.field { flex: 1 1 220px; min-width: 180px; }
+
+label { display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.95rem; }
+.inline-input { display:flex; gap:0.5rem; align-items: center; }
+.inline-input input[type="number"] {
+  flex: 1;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid #e6edf3;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.inline-input select {
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #e6edf3;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 0.95rem;
+}
+
+.actions { margin-top: 1rem; display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap; }
+button {
+  cursor:pointer;
+  border: none;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  font-weight: 600;
+  color: white;
+  background: var(--accent-blue);
+  box-shadow: none;
+}
+button.secondary {
+  background: transparent;
+  color: var(--accent-blue);
+  border: 1px solid rgba(37,99,235,0.12);
+}
+
+.muted { color: var(--muted); font-size: 0.92rem; }
+.error { color: var(--danger); margin-top: 0.6rem; }
+
+.result {
+  padding: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(148,163,184,0.18);
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+  min-height: 56px;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+.result .bmi-number {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--text);
+}
+
+.result .category {
+  font-weight: 600;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.category.under { background: var(--accent-blue); }
+.category.normal { background: var(--accent-green); }
+.category.over { background: #f59e0b; } /* amber */
+.category.obese { background: var(--danger); }
+
+.tips { margin-top: 0.75rem; color: var(--muted); font-size: 0.95rem; }
+
+/* Footer */
+.site-footer { text-align:center; margin: 2rem 0 3rem; color: var(--muted); }
+
+/* Responsive rules */
+@media (max-width: 640px) {
+  .inline-input { flex-direction: column; align-items: stretch; }
+  .actions { justify-content: stretch; }
+  button { width: 100%; }
+}
